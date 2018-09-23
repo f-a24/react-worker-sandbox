@@ -1,0 +1,76 @@
+{
+  "name": "react-start",
+  "version": "1.0.0",
+  "main": "index.jsx",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint src/**/*.*",
+    "lint-fix": "prettier-eslint --write src/**/*.*",
+    "precommit": "lint-staged",
+    "test": "jest",
+    "start": "webpack-dev-server --config webpack.config.js --hot"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "\\.(js|jsx)$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupTestFrameworkScriptFile": "./src/test/setupTest.js"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-color": "^2.14.1",
+    "react-dom": "^16.5.2",
+    "recompose": "^0.30.0",
+    "styled-components": "^3.4.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^2.50.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
+    "husky": "^1.0.0-rc.15",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "worker-loader": "^2.0.0"
+  }
+}
